@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+}
+
+.mdc-drawer__header img {
+    width: 8rem;
+    margin-top: 1rem;
+}
+
+.margin-icon {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.mdc-image-list--masonry{
+    column-count: 2;
+}
+
+footer{
+    bottom: 0;
+}
+
+.divider{
+    display: flex;
+    justify-content: space-around;
+}
+
+.mdc-image-list__item img{
+    margin-bottom: 1rem;
+}
+
+.hidden{
+    display: none;
+}
+
+header, footer{
+    max-width: 100vw;
+}
+
+.sheet{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-left: 0;
+    background-color: black;
+    transition: margin-left 0.3s ease;
+}
+
+.sheet-out-of-view{
+    margin-left: 100%;
+}
+
+.sheet main{
+    min-height: calc(100vh - 56px - 48px);
+}
+
+.sheet main img{
+    width: 100%;
+    height: auto;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
