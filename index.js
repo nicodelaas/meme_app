@@ -129,3 +129,4 @@ imageListItems.forEach(imageListItem => {
        imageListItem.addEventListener('click',function(){
            openSheet('sheet-meme')});
     });
+
