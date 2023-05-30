@@ -1,7 +1,7 @@
 {
   "name": "Meme Progressive Web App",
   "short_name": "Meme PWA",
-  "start_url": "index.html",
+  "start_url": "meme_app",
   "display": "standalone",
   "icons": [
     {
