@@ -36,8 +36,8 @@ const topAppBar = new MDCTopAppBar(topAppBarElement);
 const listEl = document.querySelector('.mdc-drawer .mdc-list');
 const mainContentEl = document.querySelector('.main-content');
 
-window.addEventListener('load', () =>{
-    if("serviceWorker" in navigator){
+window.addEventListener('load', () => {
+    if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("service-worker.js");
     }
 })
@@ -50,24 +50,22 @@ document.body.addEventListener('MDCDrawer:closed', () => {
     mainContentEl.querySelector('input, button').focus();
 });
 
-function openDrawer()
-{
+function openDrawer() {
     drawer.open = true;
 }
 
-function home()
-{
-    document.querySelectorAll('.mdc-image-list__item').forEach(item =>{
+function home() {
+    document.querySelectorAll('.mdc-image-list__item').forEach(item => {
         item.classList.remove('hidden');
     });
 }
 
-function chooseImages(className){
+function chooseImages(className) {
 
-    document.querySelectorAll('.mdc-image-list__item').forEach(item =>{
+    document.querySelectorAll('.mdc-image-list__item').forEach(item => {
         item.classList.add('hidden');
     });
-    document.querySelectorAll('.'+className).forEach(item =>{
+    document.querySelectorAll('.' + className).forEach(item => {
         item.classList.remove('hidden');
     });
 }
@@ -80,27 +78,28 @@ const tabBarBottomMeme = new MDCTabBar(document.querySelector('.mdc-tab-bar-meme
 
 let imageListItems = document.querySelectorAll('.mdc-image-list__item')
 
-function openSheet(sheetID)
-{
+function openSheet(sheetID) {
     let sheet = document.getElementById(sheetID);
     sheet.classList.remove('hidden');
 
-    setTimeout(function(){sheet.classList.remove('sheet-out-of-view'); }, 10);
+    setTimeout(function () {
+        sheet.classList.remove('sheet-out-of-view');
+    }, 10);
 
-    setTimeout(function(){
+    setTimeout(function () {
         let maxHoogteMain = sheet.getElementsByTagName('main')[0].offsetHeight - 10;
         document.getElementById('main-content').style.height = maxHoogteMain + 'px';
         document.getElementById('main-content').style.overflowY = 'hidden';
     }, 300);
 
     let newUrl = window.location.href + '?sheet=' + sheetID;
-    history.pushState(null,null,newUrl);
+    history.pushState(null, null, newUrl);
 }
 
 // open de meme sheet
 
 document.querySelectorAll('.mdc-image-list__image').forEach(collection => {
-    collection.addEventListener('click', function(){
+    collection.addEventListener('click', function () {
         document.querySelector('.meme-title').innerHTML = this.title || "No title";
         document.querySelector('.meme-image').src = this.src;
         document.querySelector('.sheet').classList.add("sheet-open");
@@ -108,7 +107,7 @@ document.querySelectorAll('.mdc-image-list__image').forEach(collection => {
 });
 
 
-function closeSheets(){
+function closeSheets() {
 
     // herstel de hoogte van de homepage weer naar oorspronkelijke formaat
 
@@ -118,15 +117,18 @@ function closeSheets(){
     let sheets = document.querySelectorAll('.sheet');
     sheets.forEach(sheet => {
         sheet.classList.add('sheet-out-of-view');
-        setTimeout(function(){sheet.classList.add('hidden');} ,310);
+        setTimeout(function () {
+            sheet.classList.add('hidden');
+        }, 310);
     });
 
-    history.pushState(null,null,window.location.pathname);
+    history.pushState(null, null, window.location.pathname);
 }
 
 
 imageListItems.forEach(imageListItem => {
-       imageListItem.addEventListener('click',function(){
-           openSheet('sheet-meme')});
+    imageListItem.addEventListener('click', function () {
+        openSheet('sheet-meme')
     });
+});
 
