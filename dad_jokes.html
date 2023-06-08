@@ -157,7 +157,7 @@
     </div>
     <div class="mdc-drawer__content">
         <nav class="mdc-list">
-            <a class="mdc-list-item mdc-list-item--activated" href="index.html" aria-current="page">
+            <a class="mdc-list-item mdc-list-item--activated"  onclick="previous()" aria-current="page">
                 <span class="mdc-list-item__ripple"></span>
                 <i class="material-icons mdc-list-item__graphic margin-icon" aria-hidden="true">home</i>
                 <span class="mdc-list-item__text" onclick="home()">Home</span>
@@ -267,5 +267,9 @@
             });
         }
     });
+
+    function previous() {
+        window.history.back()
+    }
 </script>
 </html>
