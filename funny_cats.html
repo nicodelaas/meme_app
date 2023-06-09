@@ -10,6 +10,7 @@
 <style>
     body {
         margin: 0;
+        background-image: url(public/HN002616.jpg);
     }
 
     .mdc-drawer__header img {
@@ -47,7 +48,7 @@
         max-width: 100vw;
     }
 
-    .button-postion {
+    .cat_position {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -66,12 +67,13 @@
         display: none;
     }
 
-    .my-card {
-        height: 350px;
-        width: 350px;
+    .cat_divider {
+        display: flex;
+        justify-content: space-around;
     }
 
-    .cat_img {
+    .cat_img,
+    .cat_img2 {
         width: 100%;
         height: auto;
     }
@@ -90,6 +92,13 @@
         z-index: 1;
     }
 
+    .title {
+        margin: 10px;
+        font-size: 2rem;
+        height: 2rem;
+        text-align: center;
+    }
+
     .dropdown-content a {
         color: black;
         padding: 12px 16px;
@@ -97,14 +106,21 @@
         display: block;
     }
 
+    .color_card {
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+
     .dropdown:hover .dropdown-content {
         display: block;
     }
 
+    .divider {
+        display: flex;
+        justify-content: space-around;
+    }
+
     @media screen and (max-width: 992px) {
-        .joke_text {
-            font-size: 2rem;
-        }
+
     }
 </style>
 <body>
@@ -114,7 +130,7 @@
             <button onclick="openDrawer()" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
                     aria-label="Open navigation menu">menu
             </button>
-            <span class="mdc-top-app-bar__title">Dad Jokes</span>
+            <span class="mdc-top-app-bar__title">Which cat is funnier??</span>
         </section>
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
             <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search
@@ -151,41 +167,96 @@
         </nav>
     </div>
 </aside>
-<div class="button-postion">
-    <main class="mdc-top-app-bar--fixed-adjust" id="main-content">
-        <div class="mdc-card">
-            <div class="mdc-card__primary-action">
-                <div class="mdc-card__media mdc-card__media--square">
-                    <div class="mdc-card__media-content">
-                        <img class="cat_img" alt="cats">
+<div class="cat_divider">
+    <div class="cat_position">
+        <main class="mdc-top-app-bar--fixed-adjust" id="main-content">
+            <div class="title">Compurrtitor 1</div>
+            <div class="mdc-card color_card">
+                <div class="mdc-card__primary-action">
+                    <div class="mdc-card__media mdc-card__media--square">
+                        <div class="mdc-card__media-content">
+                            <img class="cat_img" src="public/202.jpeg" alt="cats">
+                        </div>
+                    </div>
+                    <div class="mdc-card__ripple"></div>
+                </div>
+                <div class="mdc-card__actions">
+                    <div class="mdc-card__action-buttons">
+                        <button class="mdc-button mdc-button--raised">
+                            <span class="mdc-button__label" id="cat1"
+                                  onclick="get_the_cats('cat1')">This kitty</span>
+                        </button>
+                        <p>score: <span id="kitty_counter1">0</span></p>
+                    </div>
+                    <div class="mdc-card__action-icons">
+                        <div class="dropdown">
+                            <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon"
+                                    title="Share">share
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="https://www.facebook.com">Facebook</a>
+                                <a href="https://www.twitter.com">Twitter</a>
+                                <a href="https://www.instagram.com">Instagram</a>
+                                <a href="#" data-social-media="whatsapp" data-url="">WhatsApp</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="mdc-card__ripple"></div>
             </div>
-            <div class="mdc-card__actions">
-                <div class="mdc-card__action-buttons">
-                    <button class="mdc-button mdc-button--raised">
-                        <span class="mdc-button__label" onclick="get_the_cats()">Shmeow the cat</span>
-                    </button>
-                </div>
-                <div class="mdc-card__action-icons">
-                    <div class="dropdown">
-                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon"
-                                title="Share">share
+        </main>
+    </div>
+    <main class="mdc-top-app-bar--fixed-adjust" id="main-content3">
+        <div class="cat_position">
+            <div class="mdc-card color_card">
+                <div class="mdc-card__actions">
+                    <div class="mdc-card__action-buttons">
+                        <button class="mdc-button mdc-button--raised">
+                            <span class="mdc-button__label" id="3" onclick="get_the_cats('cat3')">Start</span>
                         </button>
-                        <div class="dropdown-content">
-                            <a href="https://www.facebook.com">Facebook</a>
-                            <a href="https://www.twitter.com">Twitter</a>
-                            <a href="https://www.instagram.com">Instagram</a>
-                            <a href="#" data-social-media="whatsapp" data-url="">WhatsApp</a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+    <div class="cat_position">
+        <main class="mdc-top-app-bar--fixed-adjust" id="main-content2">
+            <div class="title">Compurrtitor 2</div>
+            <div class="mdc-card color_card">
+                <div class="mdc-card__primary-action">
+                    <div class="mdc-card__media mdc-card__media--square">
+                        <div class="mdc-card__media-content">
+                            <img class="cat_img2" src="public/202.jpeg" alt="cats">
+                        </div>
+                    </div>
+                    <div class="mdc-card__ripple"></div>
+                </div>
+                <div class="mdc-card__actions">
+                    <div class="mdc-card__action-buttons">
+                        <button class="mdc-button mdc-button--raised">
+                            <span class="mdc-button__label" id="cat2"
+                                  onclick="get_the_cats('cat2')">This Katt</span>
+                        </button>
+                        <p>score: <span id="kitty_counter2">0</span></p>
+                    </div>
+                    <div class="mdc-card__action-icons">
+                        <div class="dropdown">
+                            <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon"
+                                    title="Share">share
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="https://www.facebook.com">Facebook</a>
+                                <a href="https://www.twitter.com">Twitter</a>
+                                <a href="https://www.instagram.com">Instagram</a>
+                                <a href="#" data-social-media="whatsapp" data-url="">WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 </div>
+
 <footer class="mdc-top-app-bar">
     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-center divider" role="toolbar">
         <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Favorite">groups
@@ -204,19 +275,69 @@
     const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
     const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
 
-    async function get_the_cats() {
-        await fetch('https://api.thecatapi.com/v1/images/search?limit=1?api_key=live_1YNVUvxk3wrvvabHqlXlmdIlep5Sx5B4gomuOpFYt0jwoYBME3aW8qZ9gMHGfoyZ', {
-            headers: {
-                'Accept': 'application/json'
+    document.body.addEventListener('MDCDrawer:closed', () => {
+        mainContentEl.querySelector('input, button').focus();
+    });
+
+    let kitty_counter1 = 0;
+    let kitty_counter2 = 0;
+
+    async function get_the_cats(cat_id) {
+        await fetch(
+            'https://api.thecatapi.com/v1/images/search?limit=2&api_key=live_1YNVUvxk3wrvvabHqlXlmdIlep5Sx5B4gomuOpFYt0jwoYBME3aW8qZ9gMHGfoyZ',
+            {
+                headers: {
+                    Accept: 'application/json',
+                },
             }
-        })
-            .then(response => response.json())
-            .then(data => {
-                const image_url = data[0].url;
-                const img = document.querySelector('.cat_img');
-                img.src = image_url;
+        )
+            .then((response) => response.json())
+            .then((data) => {
+                const images = data.map((imageData) => imageData.url);
+
+                if (cat_id === 'cat1') {
+                    const img_element1 = document.querySelector('.cat_img2');
+                    img_element1.src = images[0];
+
+                    kitty_counter1++;
+                    kitty_counter2 = 0;
+                    document.getElementById('kitty_counter1').textContent = kitty_counter1;
+                    document.getElementById('kitty_counter2').textContent = kitty_counter2;
+                } else if (cat_id === 'cat2') {
+                    const img_element2 = document.querySelector('.cat_img');
+                    img_element2.src = images[1];
+
+                    kitty_counter1 = 0;
+                    kitty_counter2++;
+                    document.getElementById('kitty_counter2').textContent = kitty_counter2;
+                    document.getElementById('kitty_counter1').textContent = kitty_counter1;
+
+
+                } else {
+                    const img_element1 = document.querySelector('.cat_img2');
+                    const img_element2 = document.querySelector('.cat_img');
+                    img_element1.src = images[0];
+                    img_element2.src = images[1];
+                    let kitty_counter1 = 0;
+                    let kitty_counter2 = 0;
+                    document.getElementById('kitty_counter1').textContent = kitty_counter1;
+                    document.getElementById('kitty_counter2').textContent = kitty_counter2;
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
             });
     }
+
+    const img_element1 = document.querySelector('.cat_img2');
+    img_element1.addEventListener('click', function () {
+        get_the_cats('cat1');
+    });
+
+    const img_element2 = document.querySelector('.cat_img');
+    img_element2.addEventListener('click', function () {
+        get_the_cats('cat2');
+    });
 
     document.body.addEventListener('MDCDrawer:closed', () => {
         mainContentEl.querySelector('input, button').focus();

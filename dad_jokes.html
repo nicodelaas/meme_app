@@ -22,10 +22,6 @@
         margin-bottom: 0.5rem;
     }
 
-    .mdc-image-list--masonry{
-        column-count: 2;
-    }
-
     footer{
         bottom: 0;
     }
@@ -39,10 +35,6 @@
         margin-bottom: 1rem;
     }
 
-    .hidden{
-        display: none;
-    }
-
     header, footer{
         max-width: 100vw;
     }
@@ -51,19 +43,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-
-    .sheet{
-        position: absolute;
-        top: 0;
-        width: 100%;
-        margin-left: 0;
-        background-color: black;
-        transition: margin-left 0.3s ease;
-    }
-
-    .sheet-out-of-view{
-        margin-left: 100%;
     }
 
     .sheet main{
@@ -80,14 +59,15 @@
     }
 
     .my-card {
-        height: 350px;
-        width: 350px;
+        width: 300px;
+        text-align: center;
     }
 
-    .title_text{
-        margin: 1rem;
+    .title{
+        margin: 10px;
+        font-size: 2rem;
+        height: 5rem;
         text-align: center;
-        font-size: 24px;
     }
 
     .joke_text{
@@ -177,10 +157,10 @@
 </aside>
 <div class="button-postion">
 <main class="mdc-top-app-bar--fixed-adjust" id="main-content">
+    <div class="title"> #1 Dad jokes</div>
     <div class="mdc-card my-card">
         <div class="mdc-card__primary-action">
             <div class="mdc-card__media mdc-card__media--square">
-                <div class="mdc-card__media-content title_text"> #1 Dad jokes</div>
             </div>
             <div class="mdc-card__media-content joke_text"> </div>
             <div class="mdc-card__ripple"></div>
