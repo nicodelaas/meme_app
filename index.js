@@ -132,3 +132,7 @@ imageListItems.forEach(imageListItem => {
     });
 });
 
+let heartButton = document.getElementById("heartButton");
+heartButton.addEventListener("click", function() {
+    heartButton.classList.toggle("clicked");
+});

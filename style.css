@@ -62,3 +62,14 @@ header, footer{
 body::-webkit-scrollbar{
     display: none;
 }
+
+#heartButton {
+    font-size: 24px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+#heartButton.clicked {
+    font-size: 32px;
+    color: red;
+}
