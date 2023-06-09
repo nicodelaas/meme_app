@@ -22,60 +22,47 @@
         margin-bottom: 0.5rem;
     }
 
-    .mdc-image-list--masonry{
+    .mdc-image-list--masonry {
         column-count: 2;
     }
 
-    footer{
+    footer {
         bottom: 0;
     }
 
-    .divider{
+    .divider {
         display: flex;
         justify-content: space-around;
     }
 
-    .mdc-image-list__item img{
+    .mdc-image-list__item img {
         margin-bottom: 1rem;
     }
 
-    .hidden{
+    .hidden {
         display: none;
     }
 
-    header, footer{
+    header, footer {
         max-width: 100vw;
     }
 
-    .button-postion{
+    .button-postion {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .sheet{
-        position: absolute;
-        top: 0;
-        width: 100%;
-        margin-left: 0;
-        background-color: black;
-        transition: margin-left 0.3s ease;
-    }
-
-    .sheet-out-of-view{
-        margin-left: 100%;
-    }
-
-    .sheet main{
+    .sheet main {
         min-height: calc(100vh - 56px - 48px);
     }
 
-    .sheet main img{
+    .sheet main img {
         width: 100%;
         height: auto;
     }
 
-    body::-webkit-scrollbar{
+    body::-webkit-scrollbar {
         display: none;
     }
 
@@ -84,20 +71,9 @@
         width: 350px;
     }
 
-    .title_text{
-        margin: 1rem;
-        text-align: center;
-        font-size: 24px;
-    }
-
-    .joke_text{
-        display: flex;
-        margin: 2rem;
-        text-align: center;
-        font-size: 16px;
-        flex-direction: column;
-        align-content: stretch;
-        justify-content: space-evenly;
+    .cat_img {
+        width: 100%;
+        height: auto;
     }
 
     .dropdown {
@@ -110,7 +86,7 @@
         position: absolute;
         background-color: #f9f9f9;
         min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
     }
 
@@ -126,7 +102,7 @@
     }
 
     @media screen and (max-width: 992px) {
-        .joke_text{
+        .joke_text {
             font-size: 2rem;
         }
     }
@@ -160,7 +136,7 @@
             <a class="mdc-list-item mdc-list-item--activated" href="index.html" aria-current="page">
                 <span class="mdc-list-item__ripple"></span>
                 <i class="material-icons mdc-list-item__graphic margin-icon" aria-hidden="true">home</i>
-                <span class="mdc-list-item__text"   >Home</span>
+                <span class="mdc-list-item__text">Home</span>
             </a>
             <a class="mdc-list-item" href="../MemeDesign/dad_jokes.html">
                 <span class="mdc-list-item__ripple"></span>
@@ -176,33 +152,39 @@
     </div>
 </aside>
 <div class="button-postion">
-<main class="mdc-top-app-bar--fixed-adjust" id="main-content">
-    <div class="mdc-card my-card">
-        <div class="mdc-card__primary-action">
-            <div class="mdc-card__media mdc-card__media--square">
-                <div class="mdc-card__media-content title_text"> #1 Dad jokes</div>
+    <main class="mdc-top-app-bar--fixed-adjust" id="main-content">
+        <div class="mdc-card">
+            <div class="mdc-card__primary-action">
+                <div class="mdc-card__media mdc-card__media--square">
+                    <div class="mdc-card__media-content">
+                        <img class="cat_img" alt="cats">
+                    </div>
+                </div>
+
+                <div class="mdc-card__ripple"></div>
             </div>
-            <div class="mdc-card__media-content joke_text"> </div>
-            <div class="mdc-card__ripple"></div>
-        </div>
-        <div class="mdc-card__actions">
-            <div class="mdc-card__action-buttons">
-                <button class="mdc-button mdc-button--raised" onclick="get_joke_list()">
-                    <span class="mdc-button__label">Wanna hear a dad joke?</span>
-                </button>
-            </div>
-            <div class="dropdown">
-                <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
-                <div class="dropdown-content">
-                    <a href="https://www.facebook.com">Facebook</a>
-                    <a href="https://www.twitter.com">Twitter</a>
-                    <a href="https://www.instagram.com">Instagram</a>
-                    <a href="#" data-social-media="whatsapp" data-url="">WhatsApp</a>
+            <div class="mdc-card__actions">
+                <div class="mdc-card__action-buttons">
+                    <button class="mdc-button mdc-button--raised">
+                        <span class="mdc-button__label" onclick="get_the_cats()">Shmeow the cat</span>
+                    </button>
+                </div>
+                <div class="mdc-card__action-icons">
+                    <div class="dropdown">
+                        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon"
+                                title="Share">share
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="https://www.facebook.com">Facebook</a>
+                            <a href="https://www.twitter.com">Twitter</a>
+                            <a href="https://www.instagram.com">Instagram</a>
+                            <a href="#" data-social-media="whatsapp" data-url="">WhatsApp</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>
 </div>
 <footer class="mdc-top-app-bar">
     <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-center divider" role="toolbar">
@@ -215,23 +197,24 @@
 <script>
     const MDCRipple = mdc.ripple.MDCRipple;
     const selector = '.mdc-button, .mdc-icon-button, .mdc-card__primary-action';
-    const ripples = [].map.call(document.querySelectorAll(selector), function(el) {
+    const ripples = [].map.call(document.querySelectorAll(selector), function (el) {
         return new MDCRipple(el);
     });
     const MDCDrawer = mdc.drawer.MDCDrawer;
     const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
     const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
 
-    async function get_joke_list() {
-        await fetch('https://icanhazdadjoke.com/', {
+    async function get_the_cats() {
+        await fetch('https://api.thecatapi.com/v1/images/search?limit=1?api_key=live_1YNVUvxk3wrvvabHqlXlmdIlep5Sx5B4gomuOpFYt0jwoYBME3aW8qZ9gMHGfoyZ', {
             headers: {
                 'Accept': 'application/json'
             }
         })
             .then(response => response.json())
             .then(data => {
-                let joke_data = data.joke;
-                document.querySelector('.joke_text').innerHTML = joke_data;
+                const image_url = data[0].url;
+                const img = document.querySelector('.cat_img');
+                img.src = image_url;
             });
     }
 
@@ -249,16 +232,17 @@
         });
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         let dropdowns = document.getElementsByClassName('dropdown');
         for (let i = 0; i < dropdowns.length; i++) {
-            dropdowns[i].addEventListener('click', function(e) {
+            dropdowns[i].addEventListener('click', function (e) {
                 let target = e.target;
                 let dropdownContent = this.getElementsByClassName('dropdown-content')[0];
 
                 if (target.tagName === 'A') {
                     let shareURL = window.location.href;
                     if (shareURL) {
+                        console.log('Sending URL:', shareURL); // Replace with your logic to send the URL
                     }
                 }
                 dropdownContent.classList.toggle('show');
