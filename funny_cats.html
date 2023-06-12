@@ -117,11 +117,23 @@
         justify-content: space-around;
     }
 
+    #kitty_counter1,
+    #kitty_counter2 {
+        margin-left: 20px;
+    }
+
     @media screen and (max-width: 992px) {
-        .color_card{
+        .color_card {
             width: 40vw;
         }
+
+        #kitty_counter1,
+        #kitty_counter2 {
+            margin-left: 0;
+        }
     }
+
+
 </style>
 <body>
 <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
@@ -143,7 +155,7 @@
 <!--drawer-->
 <aside class="mdc-drawer mdc-drawer--modal">
     <div class="mdc-drawer__header">
-        <a href="index.html"><img  src="public/Graafschap-college-removebg-preview.png"></a>
+        <a href="index.html"><img src="public/Graafschap-college-removebg-preview.png"></a>
         <h3 class="mdc-drawer__title">Graafschap College</h3>
         <h6 class="mdc-drawer__subtitle">altijd in voor een meme</h6>
     </div>
@@ -188,19 +200,6 @@
                         </button>
                         <p>score: <span id="kitty_counter1">0</span></p>
                     </div>
-                    <div class="mdc-card__action-icons">
-                        <div class="dropdown">
-                            <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon"
-                                    title="Share">share
-                            </button>
-                            <div class="dropdown-content">
-                                <a href="https://www.facebook.com">Facebook</a>
-                                <a href="https://www.twitter.com">Twitter</a>
-                                <a href="https://www.instagram.com">Instagram</a>
-                                <a href="#" data-social-media="whatsapp" data-url="">WhatsApp</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </main>
@@ -237,19 +236,6 @@
                                   onclick="get_the_cats('cat2')">This Katt</span>
                         </button>
                         <p>score: <span id="kitty_counter2">0</span></p>
-                    </div>
-                    <div class="mdc-card__action-icons">
-                        <div class="dropdown">
-                            <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon"
-                                    title="Share">share
-                            </button>
-                            <div class="dropdown-content">
-                                <a href="https://www.facebook.com">Facebook</a>
-                                <a href="https://www.twitter.com">Twitter</a>
-                                <a href="https://www.instagram.com">Instagram</a>
-                                <a href="#" data-social-media="whatsapp" data-url="">WhatsApp</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
