@@ -42,7 +42,7 @@ window.addEventListener('load', () => {
     }
 })
 
-listEl.addEventListener('click', (event) => {
+listEl.addEventListener('click', () => {
     drawer.open = false;
 });
 
@@ -96,6 +96,12 @@ function openSheet(sheetID) {
     history.pushState(null, null, newUrl);
 }
 
+imageListItems.forEach(imageListItem => {
+    imageListItem.addEventListener('click', function () {
+        openSheet('sheet-meme')
+    });
+});
+
 // open de meme sheet
 
 document.querySelectorAll('.mdc-image-list__image').forEach(collection => {
@@ -108,8 +114,6 @@ document.querySelectorAll('.mdc-image-list__image').forEach(collection => {
 
 
 function closeSheets() {
-
-    // herstel de hoogte van de homepage weer naar oorspronkelijke formaat
 
     document.getElementById('main-content').style.height = 'auto';
     document.getElementById('main-content').style.overflowY = 'auto';
@@ -125,14 +129,3 @@ function closeSheets() {
     history.pushState(null, null, window.location.pathname);
 }
 
-
-imageListItems.forEach(imageListItem => {
-    imageListItem.addEventListener('click', function () {
-        openSheet('sheet-meme')
-    });
-});
-
-let heartButton = document.getElementById("heartButton");
-heartButton.addEventListener("click", function() {
-    heartButton.classList.toggle("clicked");
-});

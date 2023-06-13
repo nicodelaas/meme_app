@@ -223,12 +223,6 @@
         drawer.open = true;
     }
 
-    function home() {
-        document.querySelectorAll('.mdc-image-list__item').forEach(item => {
-            item.classList.remove('hidden');
-        });
-    }
-
     document.addEventListener('DOMContentLoaded', function() {
         let dropdowns = document.getElementsByClassName('dropdown');
         for (let i = 0; i < dropdowns.length; i++) {
